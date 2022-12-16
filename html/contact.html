@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Contact</title>
+</head>
+
+<body>
+
+    <header>
+
+        <img src="/assets/img/jarditou_logo2.png" id="logo" alt="logo jarditou" title="logo jarditou">
+
+        <p class="introduction">La qualité depuis 70 ans</p>
+
+    </header>
+    <nav>
+
+        <ul class="nav_liens">
+            <li><a href="../projet_jarditou/index.html">Accueil</a></li>
+            <li><a href="../projet_jarditou/tableau.html">Tableau</a></li>
+            <li><a href="../projet_jarditou/contact.html">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <nav>
+        <img src="/assets/img/promotion.jpg" alt="promo" id="promo">
+    </nav>
+
+    <br>
+
+    <section id="section_form">
+
+        <h1>Contact</h1>
+        <hr>
+
+        <p>*Ces zones sont obligatoires</p>
+
+        <form action="azerty.php" method="post" id="formulaire">
+            <fieldset class="encadrement">
+
+                <legend>Vos coordonnées</legend>
+
+                <label for="nom"> Votre nom*: </label><input type="text" name="nom" id="nom" placeholder="nom"
+                    class="input_cases">
+                <span id="erreur_nom"></span>
+
+                <br class="large">
+
+                <label for="prenom">Votre prénom*: </label><input type="text" name="prenom" id="prenom"
+                    placeholder="prenom" class="input_cases">
+                <div id="erreur_prenom"></div>
+
+                <br class="large">
+
+                <label>Sexe*</label>
+
+                <br class="large">
+
+                <div id="sexe_div">
+                    <div>
+                        <label for="masculin">Masculin</label>
+                        <input type="radio" name="sexe" id="masculin" checked>
+                    </div>
+                    <div id="erreur_sexe_m"></div>
+                    <div>
+                        <label for="feminin">Féminin</label>
+                        <input type="radio" name="sexe" id="feminin">
+                    </div>
+                    <div id="erreur_sexe_f"></div>
+
+                </div>
+
+                <br>
+
+                <div id="abc">
+
+                    <label for="date">Date de naissance:</label><input type="date" name="ddn" id="ddn" placeholder="ddn"
+                        class="input_cases">
+                    <div id="erreur_ddn"></div>
+
+                    <br>
+
+                    <label for="cp">Code postal*: </label><input type="text" name="code postal" id="cp" placeholder="cp"
+                        class="input_cases">
+                    <div id="erreur_cp"></div>
+
+                    <br>
+
+                    <label for="adresse">Adresse: </label><input type="text" name="adresse" id="adresse"
+                        placeholder="adresse" class="input_cases">
+                    <div id="erreur_adresse"></div>
+
+                    <br>
+
+                    <label for="ville">Ville: </label><input type="text" name="ville" id="ville" placeholder="ville"
+                        class="input_cases">
+                    <br>
+
+                    <label for="email">Email*: </label><input type="email" name="email" id="email" class="input_cases"
+                        placeholder="Contact@exemple.com.">
+                    <div id="erreur_email"></div>
+
+                </div>
+
+            </fieldset>
+
+            <fieldset class="encadrement">
+
+                <legend>Votre demande</legend>
+
+                <div>Sujet*:
+
+                    <label for="sujet"></label>
+                    <select id="sujet">
+                        <option value="" selected disabled hidden>Veuillez séléctionner un sujet</option>
+                        <option value="question">Question sur un produit</option>
+                        <option value="réclamation">Réclamation</option>
+                        <option value="autres">Autres</option>
+
+                    </select>
+                    <div id="erreur_sujet"></div>
+                    <br>
+                    <label>Votre question*:</label>
+                    <textarea id="quest" name="commentaire" rows="10" cols="50"
+                        placeholder="Votre question ici"></textarea>
+                    <div id="erreur_quest"></div>
+
+                </div>
+
+                <div id="cgu">
+                    <input type="checkbox" name="cgu" id="message" value="cgu">
+                    <div id="erreur_cgu"></div>
+                    <label for id="azerty">*J'accepte le traitement informatique de ce formulaire</label>
+                </div>
+
+
+                <br><br>
+
+                <div class="bouton_cgu">
+                    <input type="submit" value="Envoyer" id="btn_submit">
+                    <input type="reset" value="Annuler">
+                </div>
+
+            </fieldset>
+        </form>
+
+        <p style="color: red;" id="erreur"></p>
+
+    </section>
+
+    <br>
+
+    <footer>
+
+        <br><br>
+
+        <hr>
+
+        <nav>
+
+            <ul class="nav_liens">
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Horaires</a></li>
+                <li><a href="#">Plan du site</a></li>
+            </ul>
+
+        </nav>
+
+    </footer>
+
+    <script src="/js/exe5.js"></script>
+
+
+
+</body>
+
+</html>
