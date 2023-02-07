@@ -4,81 +4,174 @@
 
 console.log("Connecté !");
 
-
-
 //******************* EXERCICE 5 ********************//
-
 
 var validation = document.getElementById('btn_submit');
 
-//******************* Alimentation de variables pour rechercher les éléments grçace aux id********************//
-
-var nom = document.getElementById("nom");
-var nom_m = document.getElementById("erreur_nom");
 
 //******************* Ecouteur d'événement lors du click sur le bouton submit ********************//
 
 validation.addEventListener('click', formValid);
 
-// btnsubmit=onClick=() => {validationFonct(formulaire)};
+//******************* Alimentation de variables pour rechercher les éléments grace aux id********************//
+
+var nom = document.getElementById("nom");
+var nom_m = document.getElementById("nom_manquant");
+
+var prenom = document.getElementById("prenom");
+var prenom_m = document.getElementById("prenom_manquant");
+
+var sexe = document.getElementById("sexe_div");
+var sexe_m = document.getElementById("sexe_manquant");
+
+var ddn = document.getElementById("ddn");
+var ddn_m = document.getElementById("ddn_manquante");
+
+var cp = document.getElementById("cp");
+var cp_m = document.getElementById("cp_manquant");
+var regexCP = /[0-9]{5}/;
+
+var adresse = document.getElementById("adresse");
+var adresse_m = document.getElementById("adresse_manquante");
+
+var ville = document.getElementById("ville");
+var ville_m = document.getElementById("ville_manquante");
+
+var email = document.getElementById("email");
+var email_m = document.getElementById("email_manquant");
+var regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+var sujet = document.getElementById("sujet");
+var sujet_m = document.getElementById("sujet_manquant");
+
+var cgu = document.getElementById("cgu");
+var cgu_m = document.getElementById("cgu_manquant");
+
+
+//************************************************************//
+
 
 function formValid(e) {
 
-    // var regexCP = /[0-9]{5}/g;
-    // var regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    var nom = document.getElementById("nom");
-    // var sexe_m = document.getElementById("sexe_div_m");
-    // var sexe_f = document.getElementById("sexe_div_f");
-    // var ddn = document.getElementById("ddn");
-    // var cp = document.getElementById("cp");
-    // var adresse = document.getElementById("adresse");
-    // var ville = document.getElementById("ville");
-    // var email = document.getElementById("email");
-    // var sujet = document.getElementById("sujet");
-    // var quest = document.getElementById("quest");
-    // var cgu = document.getElementById("cgu");
-
-    // alert(sexe.value);
-
-    // alert(ddn.value);
-
     if (nom.value === "") {
         e.preventDefault();
-        nom_m.textContent = "Nom manquant";
+        nom_m.textContent = "Veuillez renseigner votre nom";
         nom_m.style.color = "red";
-        // document.getElementById("erreur_nom").innerHTML = "Veuillez renseigner votre nom";
     }
 
-    // if (!prenom.value) {
-    //     document.getElementById("erreur_prenom").innerHTML = "Veuillez renseigner votre prénom";
-    // }
-    // // if (!sexe.value) {
-    // //     document.getElementById("erreur_sexe_m").innerHTML = "Veuillez renseigner votre sexe";
+    else {
+        nom_m.textContent = "";
+    }
 
-    // if (!ddn.value) {
-    //     document.getElementById("erreur_ddn").innerHTML = "Veuillez renseigner votre date de naissance";
-    // }
-    // if (!cp.value) {
-    //     document.getElementById("erreur_cp").innerHTML = "Veuillez renseigner votre code postal";
-    // }
-    // if (!email.value) {
-    //     document.getElementById("erreur_email").innerHTML = "Veuillez renseigner un email";
-    // }
-    // if (!sujet.value) {
-    //     document.getElementById("erreur_sujet").innerHTML = "Veuillez renseigner un sujet";
-    // }
-    // if (!quest.value) {
-    //     document.getElementById("erreur_quest").innerHTML = "Veuillez renseigner votre question";
-    // }
-    // if (!cgu.checked) {
-    //     document.getElementById("erreur_cgu").innerHTML = "Cochez : J'accepte le traitement informatique de ce formulaire";
-    // }
-    // else {
-    //
-    //     alert("Formulaire envoyé !");
-    // }
+    if (prenom.value === "") {
+        e.preventDefault();
+        prenom_m.textContent = "Veuillez renseigner votre prénom";
+        prenom_m.style.color = "red";
+    }
 
-    
+    else {
+        prenom_m.textContent = "";
+    }
+
+    if (sexe.value === "") {
+        e.preventDefault();
+        sexe_m.textContent = "Veuillez renseigner votre sexe";
+        sexe_m.style.color = "red";
+    }
+
+    else {
+        sexe_m.textContent = "";
+    }
+
+    if (ddn.value === "") {
+        e.preventDefault();
+        ddn_m.textContent = "Veuillez renseigner votre date de naissance";
+        ddn_m.style.color = "red";
+    }
+
+    else {
+        ddn_m.textContent = "";
+    }
+
+    if (cp.value === "") {
+        e.preventDefault();
+        cp_m.textContent = "Veuillez renseigner votre code postal";
+        cp_m.style.color = "red";
+    }
+
+    else if (regexCP.test(cp.value) == false) {
+        e.preventDefault();
+        cp_m.textContent = "Format incorrect";
+        cp_m.style.color = "orange";
+    }
+
+    else {
+        cp_m.textContent = "";
+    }
+
+    if (adresse.value === "") {
+        e.preventDefault();
+        adresse_m.textContent = "Veuillez renseigner votre adresse";
+        adresse_m.style.color = "red";
+    }
+
+    else {
+        adresse_m.textContent = "";
+    }
+
+    if (ville.value === "") {
+        e.preventDefault();
+        ville_m.textContent = "Veuillez renseigner votre ville";
+        ville_m.style.color = "red";
+    }
+
+    else {
+        ville_m.textContent = "";
+    }
+
+    if (email.value === "") {
+        e.preventDefault();
+        email_m.textContent = "Veuillez renseigner votre email";
+        email_m.style.color = "red";
+    }
+
+    else if (regexEmail.test(email.value) == false) {
+        e.preventDefault();
+        email_m.textContent = "Format incorrect";
+        email_m.style.color = "orange";
+    }
+
+    else {
+        email_m.textContent = "";
+    }
+
+    if (sujet.value === "") {
+        e.preventDefault();
+        sujet_m.textContent = "Veuillez renseigner un sujet";
+        sujet_m.style.color = "red";
+    }
+
+    else {
+        sujet_m.textContent = "";
+    }
+
+    if (cgu.value === "") {
+        e.preventDefault();
+        cgu_m.textContent = "Cochez : J'accepte le traitement informatique de ce formulaire";
+        cgu_m.style.color = "red";
+    }
+
+    else {
+        cgu_m.textContent = "";
+    }
+
+    return false;
+
+
+
+
 };
+
+
+
 
