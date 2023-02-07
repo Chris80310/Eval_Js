@@ -33,6 +33,7 @@ var regexCP = /[0-9]{5}/;
 
 var adresse = document.getElementById("adresse");
 var adresse_m = document.getElementById("adresse_manquante");
+var regexAdressse = /^[1-9]{1-4}\p[a-zA-Z]$/;
 
 var ville = document.getElementById("ville");
 var ville_m = document.getElementById("ville_manquante");
@@ -59,8 +60,14 @@ function formValid(e) {
         nom_m.style.color = "red";
     }
 
+
     else {
-        nom_m.textContent = "";
+
+
+        nom_m.textContent = "Champ valide";
+        nom_m.style.color = "green";
+
+
     }
 
     if (prenom.value === "") {
@@ -70,7 +77,9 @@ function formValid(e) {
     }
 
     else {
-        prenom_m.textContent = "";
+
+        prenom_m.textContent = "Champ valide";
+        prenom_m.style.color = "green"
     }
 
     if (sexe.value === "") {
@@ -106,7 +115,9 @@ function formValid(e) {
     }
 
     else {
-        cp_m.textContent = "";
+
+        cp_m.textContent = "Champ valide";
+        cp_m.style.color = "green"
     }
 
     if (adresse.value === "") {
@@ -116,7 +127,9 @@ function formValid(e) {
     }
 
     else {
-        adresse_m.textContent = "";
+
+        adresse_m.textContent = "Champ valide";
+        adresse_m.style.color = "green"
     }
 
     if (ville.value === "") {
@@ -126,7 +139,9 @@ function formValid(e) {
     }
 
     else {
-        ville_m.textContent = "";
+
+        ville_m.textContent = "Champ valide";
+        ville_m.style.color = "green"
     }
 
     if (email.value === "") {
@@ -142,7 +157,9 @@ function formValid(e) {
     }
 
     else {
-        email_m.textContent = "";
+
+        email_m.textContent = "Champ valide";
+        email_m.style.color = "green"
     }
 
     if (sujet.value === "") {
@@ -155,14 +172,19 @@ function formValid(e) {
         sujet_m.textContent = "";
     }
 
-    if (cgu.value === "") {
+    // alert(cgu.checked);
+
+    if (cgu.checked == false) {
         e.preventDefault();
-        cgu_m.textContent = "Cochez : J'accepte le traitement informatique de ce formulaire";
+        cgu_m.textContent = "Cochez pour accepter le traitement informatique de ce formulaire";
         cgu_m.style.color = "red";
     }
 
     else {
-        cgu_m.textContent = "";
+
+        // cgu_m.textContent = "";
+        cgu_m.textContent = "√";
+        cgu_m.style.color = "green";
     }
 
     return false;
